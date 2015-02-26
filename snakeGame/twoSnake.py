@@ -283,7 +283,7 @@ def snakeColision(players):
 		cells = cellsList[~i]
 		for cell in cells[1:]:
 			if	isPointInsideRect(x, y, cell.rect):
-				sys.stdout.write('Colisão: ', x, y, cell.rect.center, 'Player%s' %(i + 1))
+				sys.stdout.write('Colisão: %s, %s, %s' %(x, y, cell.rect.center) + ' Player%s' %(i + 1))
 				return True, i
 		i += 1
 	return False, i
@@ -436,7 +436,7 @@ def soundPickUp():
 def playSound(path):
 	sounds = os.listdir(path)
 	sound = choice(sounds)
-	sound = pygame.mixer.Sound(path + '\\' + sound)
+	sound = pygame.mixer.Sound(path + '/' + sound)
 	sound.play()
 
 def game():
