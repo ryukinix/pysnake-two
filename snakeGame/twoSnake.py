@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3 
 #Python Studies; Manoel Vilela; 29/01/2015
 #
 #Snake Game Clone with Pygame
@@ -11,12 +10,10 @@ from pygame.locals import *
 import pygame, time, os, sys
 from time import localtime
 from random import randint, choice
-from itertools import chain
+from itertools import *
 
 #CONFIGURATION START
-WIDTH, HEIGHT = 600, 600; SIZESCREEN = WIDTH, HEIGHT; FPS = 10; MODE = 0; HIGHSCORE = 0; 
-COLISIONSCREEN = False; COLISIONPARTNER = False
-
+WIDTH, HEIGHT = 600, 600; SIZESCREEN = WIDTH, HEIGHT; FPS = 10; MODE = 0; HIGHSCORE = 0; COLISIONSCREEN = False; COLISIONPARTNER = False
 #CELL
 SIZECELL = 20
 CELLWIDTH = WIDTH // SIZECELL
@@ -78,7 +75,7 @@ class cell(object):
 		pygame.draw.rect(screen, color, self.rect)
 class food(cell):
 	def __init__(self, x, y, a, b, color, sprite):
-		super(food, self).__init__(x, y, a, b, color)
+		super().__init__(x, y, a, b, color)
 		self.sprite = sprite
 	def drawSprite(self, screen, sprite):
 		sprite = self.sprite
@@ -191,7 +188,7 @@ class snake(cell):
 	def draw(self, screen):
 		for c in self.cells:
 			c.draw(screen)
-	def drawSprites(self, screen):
+	def spritesDraw(self, screen):
 		sprites = self.sprites
 		cells = self.cells
 		headCell, tailCell = cells[0], cells[-1]
@@ -232,7 +229,7 @@ def isPointInsideRect(x, y, rect):
 def playerDraw(screen, snake):
 	snake.controlUpdate()
 	snake.moveSnake()
-	snake.drawSprites(screen)
+	snake.spritesDraw(screen)
 			
 def newFood(players, sprite):
 	while True:
@@ -244,7 +241,7 @@ def newFood(players, sprite):
 			c = c.rect
 			xCenter, yCenter = x + CELLWIDTH//2, y + CELLHEIGHT//2
 			if isPointInsideRect(xCenter,yCenter , c):
-				sys.stdout.write("Food born in the snake! Ignoring~")
+				print("Food born in the snake! Ignoring~")
 				return newFood(players, sprite)
 		a, b = CELLWIDTH, CELLHEIGHT
 		return food(x, y, a, b, RED, sprite)
@@ -283,7 +280,7 @@ def snakeColision(players):
 		cells = cellsList[~i]
 		for cell in cells[1:]:
 			if	isPointInsideRect(x, y, cell.rect):
-				sys.stdout.write('Colisão: %s, %s, %s' %(x, y, cell.rect.center) + ' Player%s' %(i + 1))
+				print('Colisão: ', x, y, cell.rect.center, 'Player%s' %(i + 1))
 				return True, i
 		i += 1
 	return False, i
@@ -317,7 +314,7 @@ def terminate():
 	exit()
 
 def writeHighscore():
-	with open('highscore.txt', 'rw') as rankdb:
+	with open('highscore.txt', '+r') as rankdb:
 		t = localtime()
 		day, month, year = t.tm_mday, t.tm_mon, t.tm_year
 		hour, minute, second = t.tm_hour, t.tm_min, t.tm_sec
@@ -331,12 +328,12 @@ def writeHighscore():
 		for line in data:
 			for score in line.split('|'):
 				score = score.strip()
-				if score.isdigit():
+				if score.isdecimal():
 					score = int(score)
 					scores.append(score)
 
-		sys.stdout.write("HIGHSCORES:\n")
-		sys.stdout.write(beforeData)
+		print("HIGHSCORES:")
+		print(beforeData, end = '')
 		write = True
 		if len(scores) > 0:
 			if HIGHSCORE > max(scores):
@@ -346,8 +343,8 @@ def writeHighscore():
 		if write:
 			string = "%4d %s\n" %(HIGHSCORE, time)
 			w = rankdb.write(string)
-			sys.stdout.write(string)
-			sys.stdout.write("Novo HIGHSCORE! %d" %HIGHSCORE)
+			print(string)
+			print("Novo HIGHSCORE! %d" %HIGHSCORE)
 
 def controlInput(player, event, control): #De todas, acho que essa é a função mais concisa.
 	for typeEvent, state in [(KEYDOWN, True), (KEYUP, False)]:
@@ -425,10 +422,10 @@ def musicPlay():
 	try:
 		musics = os.listdir('musics')
 		music = choice(musics)
-		pygame.mixer.music.load('musics' + '/' + music)
+		pygame.mixer.music.load('musics' + '\\' + music)
 		pygame.mixer.music.play(0, 0.0)
 	except pygame.error:
-		sys.stdout.write('Pygame Error in read the sound: %s' %music)
+		print('Pygame Error in read the sound: %s' %music)
 		return musicPlay()
 def soundPickUp():
 	sound = pygame.mixer.Sound('pickup.wav')
@@ -436,7 +433,7 @@ def soundPickUp():
 def playSound(path):
 	sounds = os.listdir(path)
 	sound = choice(sounds)
-	sound = pygame.mixer.Sound(path + '/' + sound)
+	sound = pygame.mixer.Sound(path + '\\' + sound)
 	sound.play()
 
 def game():
@@ -454,7 +451,7 @@ def game():
 	
 	playerSprites = []
 	for color in ['white', 'green']:
-		sprites = []; path = 'sprites/%s/' %color
+		sprites = []; path = 'sprites\\%s\\' %color
 		for image in ['head.png', 'body.png', 'tail.png', 'turn.png']:
 			sprite = pygame.image.load(path+image)
 			spriteScaled = pygame.transform.scale(sprite, (CELLWIDTH, CELLHEIGHT))
@@ -466,7 +463,7 @@ def game():
 	player2 = snake(HEIGHT - CELLWIDTH, 0, playerSprites[1], GREEN, 'Player2')
 	players = [player1, player2]
 
-	foodSprite = pygame.image.load('sprites/green/food.png')
+	foodSprite = pygame.image.load('sprites\\green\\food.png')
 	foodSprite = pygame.transform.scale(foodSprite, (CELLWIDTH, CELLHEIGHT))
 
 	food = None;	levelUp = 10
