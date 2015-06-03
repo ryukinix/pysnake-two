@@ -39,12 +39,12 @@ __There's also action keys!__
 This game was write previously in python3 on Windows. But i have add other file to suport python2 + pygame on Linux, a dumb solution for that (in future i fix that correctly). 
 
 You do <b>need</b> of:
-  * [PyGame](http://www.pygame.org/download.shtml)
   * [Python](https://www.python.org/)
+  * [PyGame](http://www.pygame.org/download.shtml)
+  
  
 
-<b>Remind:</b> The res folder has to be on the same folder as the *.exe , otherwise, it will give you a segmentation fault, or you can change the path to the images and fonts in the main.cpp and recompile the game. If you are having problems executing the game is probably because you don't have the runtime libraries of the SDL2, SDL2_image, SDL2_ttf, so just look at the links above and download them.
-
+<b>Remind:</b> In linux, the standard python version for pygame is python 2.x, then use the version *_2.py if have problens with this! 
 
 This project is license on __[Apache v2](http://www.apache.org/licenses/LICENSE-2.0.html)__!
 
