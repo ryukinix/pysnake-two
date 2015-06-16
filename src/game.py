@@ -1,22 +1,7 @@
 from __future__ import division, print_function
-# coding=utf-8
-# !/usr/bin/python3
-"""
-    -*- Python Studies -*- Snake Game Clone with Pygame -*-
+# -*-  coding: utf-8  -*-
+# !/usr/bin/env python
 
-    Testing concepts of OO with so much gamb-code! : D
-
-    ==============================================
-
-             Author: Manoel Vilela M. Neto
-        Create Data: 29/01/2015
-           Revision: 0.1.3
-            License: Apache v2
-            Contact: manoel_vilela@engineer.com
-
-    ==============================================
-
-"""
 import pygame
 import os
 from pygame.locals import *
@@ -500,7 +485,7 @@ def game_over(screen, playerName, players):
     question = pause(screen, message, 30, 40)
 
     if question:
-        return game()
+        return game_world()
     else:
         return terminate()
 
@@ -528,7 +513,7 @@ def play_sound(path):
     sound.play()
 
 
-def game():
+def game_world():
     global FPS, HIGHSCORE
 
     pygame.init()
@@ -578,7 +563,7 @@ def game():
                 elif event.key == K_ESCAPE:
                     pause(screen, ['PAUSE', 'ENTER: CONTINUE', 'ESC: QUIT'])
                 elif event.key == K_RETURN:
-                    return game()
+                    return game_world()
                 if FPS <= 0:
                     FPS = 1
 
@@ -605,4 +590,4 @@ def game():
         main_clock.tick(FPS)
 
 if __name__ == '__main__':
-    game()
+    game_world()
