@@ -10,7 +10,7 @@ Myself even drew all sprites in photoshop manually (with mouse!). And I confess 
 
 **NOTE: This software is alpha yet and your focus is the learning in control datas on logic games.**
 
-![Game Image](two-snake.png)
+![Game Image](pysnake-two.png)
 
 ## Usage
 
