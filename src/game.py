@@ -347,7 +347,7 @@ def snake_colision(players):
                 print('Player%s' % (i + 1))
                 return True, i
         i += 1
-    return False, i
+    return (False, i)
 
 
 def score(screen, players, level_up):
@@ -454,8 +454,10 @@ def pause(screen, mensagens, size=HEIGHT//15, lineSpace=HEIGHT//15):
                event.key == K_ESCAPE:
                 return terminate()
 
-            elif event.type == KEYDOWN and event.key == K_RETURN:
-                return True
+            elif event.type == KEYDOWN:
+                if event.key == K_RETURN or \
+                   event.key == K_KP_ENTER:
+                    return True
 
         pygame.display.update()
         clock.tick(FPS)
@@ -525,9 +527,6 @@ def play_sound(path):
     sound = pygame.mixer.Sound(join(path, sound))
     sound.play()
 
-def startup():
-
-
 
 def game():
     global FPS, HIGHSCORE
@@ -536,7 +535,7 @@ def game():
     music_play()
     main_clock = pygame.time.Clock()
     screen = pygame.display.set_mode(SIZESCREEN, MODE_WINDOW)
-    pygame.display.set_caption("TwoSnakes")
+    pygame.display.set_caption("pysnake-two")
     icon = pygame.image.load('snake.png')
     icon_scaled = pygame.transform.scale(icon, (32, 32))
     pygame.display.set_icon(icon_scaled)
