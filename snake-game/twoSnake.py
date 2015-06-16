@@ -68,8 +68,8 @@ PLAYER2KEYS = {
     'RIGHT': ord('d'),
 }
 
-# Usado para rotacionar os sprites de acordo com os movimentos
-# essas keys abaixo são usadas para controlar os sprites de dobra da cobra
+# It's used for rotate the sprites following the direction moves
+# The keys below are used for control the snake turn sprites
 ANGLEMOTION = {
     'UP': 90,
     'LEFT': 180,
@@ -108,7 +108,7 @@ class cell(object):
 
 class food(cell):
     def __init__(self, x, y, a, b, color, sprite):
-        # A incompatible methods with python 3.x and 2.x
+        # A incompatible methods with python 3.x and 2.x [need fixing]
         super(food, self).__init__(x, y, a, b, color)
         self.sprite = sprite
 
@@ -417,8 +417,8 @@ def writeHighscore():
             print("Novo HIGHSCORE! %d" % HIGHSCORE)
 
 
-# De todas, acho que essa é a função mais concisa. ↓
-
+# Of all, i think this function is a more beatiful things i done <3 
+# (newbie-lol)
 
 def controlInput(player, event, control):
     for typeEvent, state in [(KEYDOWN, True), (KEYUP, False)]:
