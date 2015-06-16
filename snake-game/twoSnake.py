@@ -11,7 +11,7 @@ from __future__ import division, print_function
              Author: Manoel Vilela M. Neto
         Create Data: 29/01/2015
            Revision: 0.1.3
-            License: MIT
+            License: Apache v2
             Contact: manoel_vilela@engineer.com
 
     ==============================================
