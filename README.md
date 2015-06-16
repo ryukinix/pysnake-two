@@ -1,4 +1,4 @@
-## __two-snake__
+## __pysnake-two__
 
 ## Abstract
 
