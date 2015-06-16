@@ -1,15 +1,18 @@
-__two-snake__
-===
+## __two-snake__
 
-A remake and modification of the __Snake Game__ with Pygame + Python! The game has better graphics, but yet, is not so GOOD. 
+## Abstract
+
+A remake and modification of the __Snake Game__ with Pygame + Python! The game shoud have better graphics, but yet, is not so GOOD. 
+
+## My Feelings
 
 Myself even drew all sprites in photoshop manually (with mouse!). And I confess to all of you, I'm no talent in the art of drawing — unfortunately. The key central of this game is the idea to play with two players local a Snake Game! I (think) this very fun. I'm fight with my friends. Local game is very funs... it's nostalgic.
 
-**NOTE: This software is alpha yet and your focus is the learning to control datas on logic games.**
+**NOTE: This software is alpha yet and your focus is the learning in control datas on logic games.**
 
 ![Game Image](two-snake.png)
 
-__How to play?__
+## Usage
 
 Player |     Keys    | Moviment 
 ------ | ----------- | --------
@@ -33,20 +36,40 @@ __There's also action keys!__
 
 
 
-This game was write previously in python3 on Windows. But i have add other file to suport python2 + pygame on Linux, a dumb solution for that (in future i fix that correctly). 
+## Dependency
 
-You do <b>need</b> of:
+You do **need** of:
   * [Python](https://www.python.org/)
-  * [PyGame](http://www.pygame.org/download.shtml)
-  
- 
+  * [Pygame](http://www.pygame.org/download.shtml)
 
-<b>Remind:</b> In linux, the standard python version for pygame is python 2.x, then use the version *_2.py if have problens with this! 
+To install pygame in linux debian-based you have two options:
+
+  * Using **apt**:
+    ```bash
+    sudo apt-get install python-pygame
+    ```
+ 
+  * Using **pip**:
+    ```bash
+    sudo pip install pygame
+    ```
+      
+     
+## Observation
+
+This game was write previously in python3 on Windows. But i have add other file to suport python2 + pygame on Linux, a dumb solution for that (in future i fix that correctly).
+
+
+*Remind*: In linux, the standard python version for pygame is python 2.x, then use the version *_2.py if have problens with this! 
+
+  * Update_**_6246_**x: I probably fix that thing with parallels universes on python2 // python3 after the commit **_6246_**x
+
+
+## License
 
 This project is license on __[Apache v2](http://www.apache.org/licenses/LICENSE-2.0.html)__!
 
-===
-<b>Roadmap:</b> 
+## Roadmap 
   - [ ] When the some snake death: not restart game, but reboot that instance only (most important currently).
   - [ ] Background sprite and textures.
   - [ ] Generate random food with __perfect__ prevision to not generate below at any snake on the board.
@@ -57,8 +80,7 @@ This project is license on __[Apache v2](http://www.apache.org/licenses/LICENSE-
   - [X] Pause game
 
 
-===
-Contributors
+## Contributors
  * Me (Manoel Vilela).
 
 
