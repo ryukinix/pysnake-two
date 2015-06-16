@@ -1,7 +1,5 @@
-__TwoSnake Game__
+__two-snake__
 ===
-
-
 
 A remake and modification of the __Snake Game__ with Pygame + Python! The game has better graphics, but yet, is not so GOOD. 
 
@@ -9,7 +7,7 @@ Myself even drew all sprites in photoshop manually (with mouse!). And I confess 
 
 **NOTE: This software is alpha yet and your focus is the learning to control datas on logic games.**
 
-![Game Image](twoSnake.png)
+![Game Image](two-snake.png)
 
 __How to play?__
 
@@ -52,6 +50,7 @@ This project is license on __[Apache v2](http://www.apache.org/licenses/LICENSE-
   - [ ] When the some snake death: not restart game, but reboot that instance only (most important currently).
   - [ ] Background sprite and textures.
   - [ ] Generate random food with __perfect__ prevision to not generate below at any snake on the board.
+  - [ ] Compatiblites with python2 and python3 on same code.
   - [X] Sprites player with two colors diffs: head, body, turn and tail.
   - [X] A system with highscore and parser to verify and save on the exits of game the most highscore you won with that execution.
   - [x] Musics and other sounds interactives.
