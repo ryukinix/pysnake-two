@@ -32,7 +32,6 @@ __There's also action keys!__
  ESC  |  Pause game       |
  F1   |  Speed Up (FPS)   |
  F2   |  Speed Down (FPS) |
- R    |  Reset game       |
 
 
 
