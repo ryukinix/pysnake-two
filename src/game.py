@@ -10,16 +10,22 @@ from random import randint, choice
 from itertools import *
 from os.path import join
 
+pygame.init()
+info_screen = pygame.display.Info()
+h = info_screen.current_h // 1.2
+
+
 # CONFIGURATION START
-WIDTH, HEIGHT = 600, 600
+SIZECELL = 20
+WIDTH, HEIGHT = int( h - h % SIZECELL), int(h - h % SIZECELL) # 600, 600
 SIZESCREEN = WIDTH, HEIGHT
 FPS = 10
 MODE_WINDOW = 0
 HIGHSCORE = 0
 COLISIONSCREEN = False
 COLISIONPARTNER = False
-# CELL
-SIZECELL = 20
+
+# CELL 
 CELLWIDTH = WIDTH // SIZECELL
 CELLHEIGHT = HEIGHT // SIZECELL
 
@@ -368,7 +374,7 @@ def terminate():
 
 
 def write_highscore():
-    with open('highscore.txt', 'rw') as rankdb:
+    with open('highscore.txt', '+r') as rankdb:
         t = localtime()
         day, month, year = t.tm_mday, t.tm_mon, t.tm_year
         hour, minute, second = t.tm_hour, t.tm_min, t.tm_sec
@@ -516,7 +522,6 @@ def play_sound(path):
 def game_world():
     global FPS, HIGHSCORE
 
-    pygame.init()
     music_play()
     main_clock = pygame.time.Clock()
     screen = pygame.display.set_mode(SIZESCREEN, MODE_WINDOW)
