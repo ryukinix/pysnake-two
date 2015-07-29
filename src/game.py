@@ -17,7 +17,7 @@ h = info_screen.current_h // 1.2
 
 # CONFIGURATION START
 SIZECELL = 20
-WIDTH, HEIGHT = int( h - h % SIZECELL), int(h - h % SIZECELL) # 600, 600
+WIDTH, HEIGHT = int(h - h % SIZECELL), int(h - h % SIZECELL)
 SIZESCREEN = WIDTH, HEIGHT
 FPS = 10
 MODE_WINDOW = 0
@@ -25,7 +25,7 @@ HIGHSCORE = 0
 COLISIONSCREEN = False
 COLISIONPARTNER = False
 
-# CELL 
+# CELL
 CELLWIDTH = WIDTH // SIZECELL
 CELLHEIGHT = HEIGHT // SIZECELL
 
@@ -315,7 +315,7 @@ def death_colision(screen, player, players):
     else:
         if COLISIONPARTNER:
             state = snake_colision(players)
-            if state[0] == True:
+            if state[0] is True:
                 killer = state[1]
                 return game_over(screen, players[killer].name, players)
 
