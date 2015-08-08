@@ -78,6 +78,7 @@ ANGLEMOTION = {
 
 
 class cell(object):
+
     def __init__(self, x, y, a, b, color=BLUE, angle=0):
         self.x = x
         self.y = y
@@ -98,6 +99,7 @@ class cell(object):
 
 
 class food(cell):
+
     def __init__(self, x, y, a, b, color, sprite):
         # A incompatible methods with python 3.x and 2.x [need fixing]
         super(food, self).__init__(x, y, a, b, color)
@@ -403,7 +405,6 @@ def write_highscore():
                 write = False
         if write:
             string = "%4d %s\n" % (HIGHSCORE, time)
-            w = rankdb.write(string)
             print(string)
             print("Novo HIGHSCORE! %d" % HIGHSCORE)
 
