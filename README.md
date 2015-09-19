@@ -1,4 +1,4 @@
-## __pysnake-two__
+## pysnake-two
 
 ## Abstract
 
@@ -39,20 +39,21 @@ __There's also action keys!__
 ## Dependency
 
 You do **need** of:
-  * [Python](https://www.python.org/)
-  * [Pygame](http://www.pygame.org/download.shtml)
+  
+* [Python](https://www.python.org/)
+* [Pygame](http://www.pygame.org/download.shtml)
 
 To install pygame in linux debian-based you have two options:
 
-  * Using **apt**:
-    ```bash
-    sudo apt-get install python-pygame
-    ```
- 
-  * Using **pip**:
-    ```bash
-    sudo pip install pygame
-    ```
+* Using **apt**:
+  ```bash
+  sudo apt-get install python-pygame
+  ```
+
+* Using **pip**:
+  ```bash
+  sudo pip install pygame
+  ```
       
      
 ## Observation
@@ -62,25 +63,27 @@ This game was write previously in python3 on Windows. But i have add other file 
 
 *Remind*: In linux, the standard python version for pygame is python 2.x, then use the version *_2.py if have problens with this! 
 
-  * Update_**_6246_**x: I probably fix that thing with parallels universes on python2 // python3 after the commit **_6246_**x
+* Update 62463556d45b928bd53cd94101cf74d2fe3e36f9: I probably fix that thing with parallels universes on python2 // python3 after that commit
 
 
 ## License
 
 This project is license on __[Apache v2](http://www.apache.org/licenses/LICENSE-2.0.html)__!
 
-## Roadmap 
-  - [ ] When the some snake death: not restart game, but reboot that instance only (most important currently).
-  - [ ] Background sprite and textures.
-  - [ ] Generate random food with __perfect__ prevision to not generate below at any snake on the board.
-  - [ ] Compatiblites with python2 and python3 on same code.
-  - [X] Sprites player with two colors diffs: head, body, turn and tail.
-  - [X] A system with highscore and parser to verify and save on the exits of game the most highscore you won with that execution.
-  - [x] Musics and other sounds interactives.
-  - [X] Pause game
+## Roadmap
+
+- [ ] When the some snake death: not restart game, but reboot that instance only (most important currently).
+- [ ] Background sprite and textures.
+- [ ] Generate random food with __perfect__ prevision to not generate below at any snake on the board.
+- [ ] Compatiblites with python2 and python3 on same code.
+- [X] Sprites player with two colors diffs: head, body, turn and tail.
+- [X] A system with highscore and parser to verify and save on the exits of game the most highscore you won with that execution.
+- [x] Musics and other sounds interactives.
+- [X] Pause game
 
 
 ## Contributors
- * Me (Manoel Vilela).
+
+* Me (Manoel Vilela).
 
 
