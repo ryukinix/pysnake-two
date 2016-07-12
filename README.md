@@ -4,7 +4,9 @@
 
 A remake and modification of the __Snake Game__ with Pygame + Python! The game shoud have better graphics, but yet, is not so GOOD. 
 
-## My Feelings
+## My Feelings (Wrong Feelings)
+
+TODO: Rewrite the portugles README to english.
 
 Myself even drew all sprites in photoshop manually (with mouse!). And I confess to all of you, I'm no talent in the art of drawing — unfortunately. The key central of this game is the idea to play with two players local a Snake Game! I (think) this very fun. I'm fight with my friends. Local game is very funs... it's nostalgic.
 
