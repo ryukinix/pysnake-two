@@ -2,7 +2,7 @@
 
 ## Abstract
 
-A remake and modification of the __Snake Game__ with Pygame + Python! The game shoud have better graphics, but yet, is not so GOOD. 
+A remake and modification of the __Snake Game__ with Pygame + Python! The game shoud have better graphics, but yet, is not so GOOD.
 
 ## My Feelings (Wrong Feelings)
 
@@ -16,7 +16,7 @@ Myself even drew all sprites in photoshop manually (with mouse!). And I confess 
 
 ## Usage
 
-Player |     Keys    | Moviment 
+Player |     Keys    | Moviment
 ------ | ----------- | --------
 One    |      W      |    Up
 One    |      A      |   Left
@@ -41,7 +41,7 @@ __There's also action keys!__
 ## Dependency
 
 You do **need** of:
-  
+
 * [Python](https://www.python.org/)
 * [Pygame](http://www.pygame.org/download.shtml)
 
@@ -56,14 +56,14 @@ To install pygame in linux debian-based you have two options:
   ```bash
   sudo pip install pygame
   ```
-      
-     
+
+
 ## Observation
 
 This game was write previously in python3 on Windows. But i have add other file to suport python2 + pygame on Linux, a dumb solution for that (in future i fix that correctly).
 
 
-*Remind*: In linux, the standard python version for pygame is python 2.x, then use the version *_2.py if have problens with this! 
+*Remind*: In linux, the standard python version for pygame is python 2.x, then use the version *_2.py if have problens with this!
 
 * Update 62463556d45b928bd53cd94101cf74d2fe3e36f9: I probably fix that thing with parallels universes on python2 // python3 after that commit
 
@@ -87,5 +87,3 @@ This project is license on __[Apache v2](http://www.apache.org/licenses/LICENSE-
 ## Contributors
 
 * Me (Manoel Vilela).
-
-
